@@ -1,0 +1,52 @@
+.button-component {
+    cursor: pointer;
+    width: 311px;
+    height: 56px;
+    border: none;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-button {
+    justify-content: space-between;
+}
+
+.primary-button {
+    background-color: #026C00;
+}
+
+.primary-button:hover {
+    background-color: #079504;
+}
+
+.primary-button:active {
+    background-color: #013C00;
+}
+
+.secondary-button {
+    background-color: #F7C346;
+}
+
+.secondary-button:hover {
+    background-color: #FFDF77;
+}
+
+.secondary-button:active {
+    background-color: #DCAC0D;
+}
+
+.disabled-button {
+    cursor: default;
+}
+
+.disabled-button.primary-button {
+    background-color: #B7D0B6;
+}
+
+.disabled-button.secondary-button {
+    background-color: #FFE58D;
+}
+
