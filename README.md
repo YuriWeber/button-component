@@ -7,4 +7,4 @@
   
 ## button component
   adicionar ao projeto  
-  importá-lo  
+  importá-lo para uso  
