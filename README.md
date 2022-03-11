@@ -8,3 +8,4 @@
 ## button component
   adicionar ao projeto  
   importá-lo para uso  
+    EX: import Button from "./button-component/Button";
