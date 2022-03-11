@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     // libera o uso do botão apenas cumprindo todas condições
-    if (user.name !== "" && EmailValidate(user.email) && user.number.length === 11 && user.tradeName !== "") {
+    if (user.name !== "" && EmailValidate(user.email) && user.number.length === 15 && user.tradeName !== "") {
       setDisabled(false)
     } else {
       setDisabled(true)
@@ -36,7 +36,12 @@ function App() {
     setUser({ ...user, email: element.value })
   }
   const NumberUpdate = (element) => {
-    setUser({ ...user, number: element.value })
+    // irá formatar o número no padrão brasileiro
+    let phone = element.value
+    phone = phone.replace(/\D/g, "")
+    // OBS: só esta aplicando após o oitavo digito
+    phone = phone.replace(/^(\d{2})(\d{5})(\d)/, "($1) $2-$3")
+    setUser({ ...user, number: phone })
   }
   const TradeNameUpdate = (element) => {
     setUser({ ...user, tradeName: element.value })
@@ -71,8 +76,8 @@ function App() {
         </div>
         <div className="input-container">
           <label htmlFor="number" className={user.number !== "" ? "input-active" : ""}>Número do seu WhatsApp</label>
-          <input type="tel" onBlur={() => { setErrorEnabler({ ...errorEnabler, number: true }) }} id="number" maxLength={11} placeholder="Número do seu WhatsApp" value={user.number} onChange={event => { NumberUpdate(event.target) }}></input>
-          <span className={errorEnabler.number ? (user.number.length < 11 ? "error" : "error-disabled") : "error-disabled"}>Digite seu telefone</span>
+          <input type="tel" onBlur={() => { setErrorEnabler({ ...errorEnabler, number: true }) }} id="number" maxLength={15} placeholder="Número do seu WhatsApp" value={user.number} onChange={event => { NumberUpdate(event.target) }}></input>
+          <span className={errorEnabler.number ? (user.number.length < 15 ? "error" : "error-disabled") : "error-disabled"}>Digite seu telefone</span>
         </div>
         <div className="input-container">
           <label htmlFor="tradeName" className={user.tradeName !== "" ? "input-active" : ""}>Nome fantasia da empresa</label>
