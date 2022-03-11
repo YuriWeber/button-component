@@ -1,6 +1,6 @@
 import "./style.css"
 import { useEffect, useState } from "react";
-import Button from "./button-component/Button";
+import Button from "./components/button-component/Button";
 
 const EmailValidate = (email) => {
   if (email.includes("@")) {
@@ -66,7 +66,7 @@ function App() {
       <form>
         <div className="input-container">
           <label htmlFor="name" className={user.name !== "" ? "input-active" : ""}>Seu nome</label>
-          <input type="text" onBlur={() => { setErrorEnabler({ ...errorEnabler, name: true }) }} id="name" maxLength={20} placeholder="Seu nome" value={user.name} onChange={event => { NameUpdate(event.target) }}></input>
+          <input type="text" onBlur={() => { setErrorEnabler({ ...errorEnabler, name: true }) }} id="name" maxLength={30} placeholder="Seu nome" value={user.name} onChange={event => { NameUpdate(event.target) }}></input>
           <span className={errorEnabler.name ? (user.name === "" ? "error" : "error-disabled") : "error-disabled"}>Obrigatório</span>
         </div>
         <div className="input-container">
