@@ -2,10 +2,25 @@ import "./button-style.css"
 import { Icons } from "./icons/icons"
 
 export default function Button({
+    /** define a cor do botão
+     * apenas funcionará com "primary" ou "secondary"
+     */
     color = "primary",
+    /** ícone para o botão no canto direito
+     * não é necessário um botão ter ícone
+     * "arrow-right" "refresh" "check"
+     */
     icon = "",
+    /** função a ser executada ao apertar o botão
+     */
     onClick,
+    /** caso verdadeiro o botão não funcionará
+     */
     disabled = false,
+    /** conteúdo do botão
+     * recebe o valor tanto na props children
+     * quanto entre a tag
+     */
     children
 }) {
     return (
@@ -17,7 +32,7 @@ export default function Button({
             onClick={!disabled ? onClick : undefined}
         >
             {children}
-            {children && <img src={Icons[icon]} alt="" />}
+            {children && Icons[icon]}
 
         </button>
     )

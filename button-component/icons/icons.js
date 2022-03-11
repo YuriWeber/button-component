@@ -1,9 +1,9 @@
-import check from "./check.svg";
-import refresh from "./refresh.svg";
-import arrowRight from "./arrow-right.svg"
+import { ReactComponent as Check } from "./check.svg";
+import { ReactComponent as Refresh } from "./refresh.svg";
+import { ReactComponent as ArrowRight } from "./arrow-right.svg"
 
 export const Icons = {
-    "check": check,
-    "refresh": refresh,
-    "arrow-right": arrowRight
+    "check": <Check />,
+    "refresh": <Refresh />,
+    "arrow-right": <ArrowRight />
 }

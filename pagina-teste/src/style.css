@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form:nth-child(odd) {
+    align-items: flex-start;
+}
+
+.button-container {
+    margin-top: 10px;
+}
+
+.button-container > * {
+    margin-top: 10px;
+}
+
+.input-container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 300px;
+    height: 30px;
+    font-size: 1rem;
+    padding: 1px 5px;
+    border: 1px solid #aaa;
+}
+
+input:hover {
+    border-color: #555;
+}
+
+label {
+    align-items: flex-start;
+    margin-left: 6px;
+    font-size: 0.8rem;
+    position: absolute;
+    opacity: 0;
+    background-color: #fff;
+    padding: 0 5px;
+    transition: all 400ms;
+}
+
+.input-active {
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+.error {
+    margin-top: 2px;
+    margin-left: 5px;
+    color: rgb(226, 52, 52);
+}
+
+.error-disabled {
+    opacity: 0;
+}

@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 .button-component {
     cursor: pointer;
     width: 311px;
     height: 56px;
     border: none;
-    color: #fff;
+    font-family: 'Inter', sans-serif;
 
     display: flex;
     align-items: center;
@@ -16,6 +18,7 @@
 
 .primary-button {
     background-color: #026C00;
+    color: #fff;
 }
 
 .primary-button:hover {
@@ -28,6 +31,11 @@
 
 .secondary-button {
     background-color: #F7C346;
+    color: #000;
+}
+
+.secondary-button > svg {
+    filter: invert(0.9);
 }
 
 .secondary-button:hover {
@@ -44,9 +52,14 @@
 
 .disabled-button.primary-button {
     background-color: #B7D0B6;
+    color: #fff;
 }
 
 .disabled-button.secondary-button {
     background-color: #FFE58D;
+    color: #fff;
 }
 
+.disabled-button.secondary-button > svg {
+    filter: invert(0);
+}
